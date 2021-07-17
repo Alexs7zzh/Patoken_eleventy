@@ -1,0 +1,23 @@
+:root {
+  --font-xxs: 0.23rem;
+  --font-xs: 0.35rem;
+  --font-s: 0.75rem;
+  --font: 1rem;
+  --font-l: 1.1rem;
+  --font-xl: 1.3rem;
+  
+  --line-height: 1.7rem;
+  
+  --spacing-half: calc(var(--line-height) * 0.5);
+  --spacing: var(--line-height);
+  --spacing-2: calc(var(--line-height) * 2);
+  --spacing-3: calc(var(--line-height) * 3);
+  --spacing-6: calc(var(--line-height) * 6);
+  
+  --color-bg: #fbf7eb;
+  --color-blue-dark: #253541;
+  --color-blue-light: #3f5262;
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Noto Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Osaka', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic';
+  
+}

@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+:target {
+  scroll-margin-top: 2em;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  text-size-adjust: 100%;
+  font-size: 18px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-blue-dark);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  color: var(--color-bg);
+  background-color: var(--color-blue-light);
+}
+
+p {
+  line-height: var(--line-height);
+  font-size: var(--font);
+}
+
+p + p {
+  margin-top: var(--line-height);
+}
