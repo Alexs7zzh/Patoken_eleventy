@@ -1,4 +1,5 @@
 const GhostContentAPI = require('@tryghost/content-api')
+const { AssetCache } = require('@11ty/eleventy-cache-assets')
 
 /* global process */
 const api = new GhostContentAPI({
@@ -7,8 +8,14 @@ const api = new GhostContentAPI({
   version: 'v3'
 })
 
-// const allPosts = async () => {
-//   return await api.posts.browse({ include: 'tags,authors' })
-// }
+const fetchPosts = async () => {
+  let asset = new AssetCache('all_posts')
+  if (asset.isCacheValid('1d')) return asset.getCachedValue()
 
-module.exports = api.posts.browse({ include: 'tags,authors' })
+  let result = await api.posts.browse({ include: 'tags,authors' })
+  await asset.save(result, 'json')
+
+  return result
+}
+
+module.exports = fetchPosts

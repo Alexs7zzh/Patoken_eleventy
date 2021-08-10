@@ -2,20 +2,8 @@
 layout: base.njk
 permalink: /
 ---
-{% macro authors(data) %}
-{%- for i in data -%}
-  <span>{{ i.name }}</span>
-{%- endfor -%}
-{% endmacro %}
+{% from "article.njk" import article %}
 
-<ol>
 {% for post in allPosts %}
-  <li id="{{ post.slug }}">
-    <h2>{{ post.title }}</h2>
-    <p class="info">{{ post.published_at | shortDate }} by {{ authors(post.authors) }}</p>
-    <article>
-      {{ post.html | safe }}
-    </article>
-  </li>
+  {{ article(post) }}
 {% endfor %}
-</ol>

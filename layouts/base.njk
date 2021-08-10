@@ -19,24 +19,24 @@
     <script async defer data-website-id="ba310c36-9271-4c03-9241-3b79e7eecdf8" src="https://umami.shinlog.me/umami.js"></script>
   </head>
   <body>
-    <header>
-      <h1><a href="/">{{ meta.title }}</a></h1>
+    <aside>
+      <h1 class="site-title">
+        <a href="/">{{ meta.title }}</a>
+        <a class="edit-icon" href="/ghost/">{{ 'assets/edit.svg' | svg | safe }}</a>
+      </h1>
       <nav>
-        <h2>People</h2>
         <ul>
           {% for author in authors %}
             <li>
-              <a href="/{{ author.slug }}">{{ author.name }}</a>
+              <a href="/{{ author.slug }}/" {% if author.slug | isActive(page.url) %}class="active"{% endif %}>{{ author.name }}</a>
             </li>
           {% endfor %}
         </ul>
       </nav>
-    </header>
+    </aside>
 
     <main>
       {{ content | safe }}
     </main>
-    
-    {# <script type="module" src={{ "/script.js" | jsHash }}></script> #}
   </body>
 </html>

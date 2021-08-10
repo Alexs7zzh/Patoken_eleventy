@@ -1,0 +1,30 @@
+article {
+  position: relative;
+}
+
+article + article {
+  margin-top: var(--spacing-4);
+
+  &::before {
+    content: "";
+    height: 0px;
+    width: 50%;
+    border-top: 1px solid var(--color-blue);
+    position: absolute;
+    left: 25%;
+    top: calc(0em - var(--spacing-2));
+  }
+}
+
+.info {
+  text-align: right;
+  display: grid;
+  justify-content: end;
+  margin-bottom: var(--spacing-half);
+
+  p {
+    background-color: var(--color-blue);
+    border-radius: .3em;
+    padding: .2em .4em;
+  }
+}

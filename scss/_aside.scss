@@ -1,6 +1,47 @@
+@media screen and (min-width: 648px) {
+  aside {
+    position: fixed;
+    top: var(--spacing-2);
+  }
+}
+
+.site-title a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.edit-icon svg {
+  width: .8em;
+  height: .85em;
+  margin-left: var(--spacing-half);
+  vertical-align: baseline;
+}
+
 nav {
   ul {
+    margin-top: var(--spacing);
     list-style: none;
     padding: 0;
+    user-select: none;
+  }
+
+  li {
+    margin-bottom: var(--spacing);
+    @media screen and (max-width: 648px) {
+      display: inline-block;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-text);
+    background-color: var(--color-eggshell);
+    border-radius: 0.4em;
+    padding: .4em .6em;
+  }
+
+  .active {
+    background-color: var(--color-melon);
   }
 }

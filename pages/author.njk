@@ -8,22 +8,10 @@ permalink: "/{{ author.slug }}/"
 eleventyComputed:
   title: "{{ author.name }}"
 ---
-{% macro authors(data) %}
-{%- for i in data -%}
-  <span>{{ i.name }}</span>
-{%- endfor -%}
-{% endmacro %}
+{% from "article.njk" import article %}
 
-{% set posts = author.slug | getPostsByAuthor %}
+{% set posts = author.slug | getPostsByAuthor(allPosts) %}
 
-<ol>
-  {% for post in posts %}
-    <li id="{{ post.slug }}">
-      <h2>{{ post.title }}</h2>
-      <p class="info">{{ post.published_at | shortDate }} by {{ authors(post.authors) }}</p>
-      <article>
-        {{ post.html | safe }}
-      </article>
-    </li>
-  {% endfor %}
-</ol>
+{% for post in posts %}
+  {{ article(post) }}
+{% endfor %}

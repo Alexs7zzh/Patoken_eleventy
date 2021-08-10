@@ -1,20 +1,20 @@
-const { DateTime } = require('luxon')
-const GhostContentAPI = require('@tryghost/content-api')
-
-/* global process */
-const api = new GhostContentAPI({
-  url: process.env.GHOST_URL,
-  key: process.env.GHOST_API,
-  version: 'v3'
-})
+const fs = require('fs')
 
 module.exports = config => {
-  config.addFilter('shortDate', date => {
-    return DateTime.fromISO(date).toFormat('MM/dd') // toFormat('DDD')
+  config.addFilter('isActive', (slug, url) => url.includes(slug))
+
+  config.addFilter('svg', path => {
+    const data = fs.readFileSync(path)
+    return data.toString('utf8')
   })
-  
-  config.addNunjucksAsyncFilter('getPostsByAuthor', async (author, callback) => {
-    const result = await api.posts.browse({ include: 'tags,authors', filter: `author:${author}` })
-    callback(null, result)
+
+  config.addFilter('getPostsByAuthor', (author, posts) => {
+    posts = posts.filter(i => {
+      let flag = false
+      for(let j of i.authors)
+        if (j.slug === author) flag = true
+      return flag
+    })
+    return posts
   })
 }

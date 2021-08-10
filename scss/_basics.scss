@@ -43,14 +43,12 @@ html {
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-blue-dark);
+  color: var(--color-text);
   font-family: var(--font-sans);
 }
 
 ::selection {
-  color: var(--color-bg);
-  background-color: var(--color-blue-light);
+  background-color: var(--color-melon);
 }
 
 p {
@@ -59,5 +57,5 @@ p {
 }
 
 p + p {
-  margin-top: var(--line-height);
+  margin-top: var(--spacing-half);
 }
