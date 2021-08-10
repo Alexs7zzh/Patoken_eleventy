@@ -5,6 +5,12 @@
   }
 }
 
+@media screen and (max-width: 648px) {
+  aside {
+    border-bottom: 1px solid rgb(255, 193, 193);
+  }
+}
+
 .site-title a {
   text-decoration: none;
   font-weight: bold;
@@ -30,6 +36,7 @@ nav {
     margin-bottom: var(--spacing);
     @media screen and (max-width: 648px) {
       display: inline-block;
+      margin-bottom: var(--spacing-half);
       margin-right: var(--spacing-half);
     }
   }
