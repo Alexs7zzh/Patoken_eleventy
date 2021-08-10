@@ -30,6 +30,7 @@ nav {
     margin-bottom: var(--spacing);
     @media screen and (max-width: 648px) {
       display: inline-block;
+      margin-right: var(--spacing-half);
     }
   }
 
