@@ -30,5 +30,8 @@
           }
         ]
     }
+  ],
+  "redirects": [
+    { "source": "/ghost", "destination": "https://ghost.patoken.org/ghost/", "permanent": true }
   ]
 }
