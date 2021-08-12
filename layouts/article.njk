@@ -1,7 +1,7 @@
 {% macro article(post) %}
 <article id="{{ post.slug }}">
   <div class="info">
-    <p>{{ post.authors[0].name }}{% if post.title != '(Untitled)' %}・{{ post.title }}{% endif %}</p>
+    <p class="button">{{ post.authors[0].name }}{% if post.title != '(Untitled)' %}・{{ post.title }}{% endif %}</p>
   </div>
   {{ post.html | safe }}
 </article>

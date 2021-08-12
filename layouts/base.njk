@@ -28,7 +28,7 @@
         <ul>
           {% for author in authors %}
             <li>
-              <a href="/{{ author.slug }}/" {% if author.slug | isActive(page.url) %}class="active"{% endif %}>{{ author.name }}</a>
+              <a href="/{{ author.slug }}/" class="button {% if author.slug | isActive(page.url) %}active{% endif %}">{{ author.name }}</a>
             </li>
           {% endfor %}
         </ul>
