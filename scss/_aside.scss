@@ -1,12 +1,8 @@
-@media screen and (min-width: 648px) {
-  aside {
+aside {
+  @media screen and (min-width: 648px) {
     position: fixed;
-    top: var(--spacing-2);
   }
-}
-
-@media screen and (max-width: 648px) {
-  aside {
+  @media screen and (max-width: 648px) {
     border-bottom: 1px solid rgb(255, 193, 193);
   }
 }
