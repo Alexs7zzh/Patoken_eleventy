@@ -46,7 +46,7 @@ nav ul {
     text-decoration: none;
     color: var(--color-text);
     background-color: var(--color-eggshell);
-    transition: background-color .4s ease-in-out;
+    transition: background-color .4s ease-out;
   }
 
   a:hover {
@@ -60,15 +60,23 @@ nav ul {
 
 .post-list {
   margin-top: var(--spacing-2);
+  @media screen and (max-width: 648px) {
+    margin-top: var(--spacing-half);
+  }
 
   li {
     margin-bottom: var(--spacing-half);
+    @media screen and (max-width: 648px) {
+      display: inline-block;
+      margin-bottom: calc(var(--spacing-half)/2);
+      margin-right: var(--spacing-half);
+    }
   }
 
   a {
     text-decoration: none;
     color: var(--color-text);
-    transition: color .4s ease-in-out;
+    transition: all .4s ease-out;
   }
 
   a:hover {
