@@ -57,7 +57,7 @@ const build = async () => {
     css = csso.minify(css, {
       sourceMap: false,
       restructure: true,
-      forceMediaMerge: true
+      forceMediaMerge: false
     }).css
     
     const hash = md5(css).slice(0, 10)
