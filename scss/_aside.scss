@@ -24,13 +24,14 @@
   vertical-align: baseline;
 }
 
-nav {
-  ul {
-    margin-top: var(--spacing);
-    list-style: none;
-    padding: 0;
-    user-select: none;
-  }
+nav ul {
+  padding: 0;
+  list-style: none;
+  user-select: none;
+}
+
+.author-list {
+  margin-top: var(--spacing);
 
   li {
     margin-bottom: var(--spacing);
@@ -45,9 +46,32 @@ nav {
     text-decoration: none;
     color: var(--color-text);
     background-color: var(--color-eggshell);
+    transition: background-color .4s ease-in-out;
+  }
+
+  a:hover {
+    background-color: var(--color-melon);
   }
 
   .active {
     background-color: var(--color-melon);
+  }
+}
+
+.post-list {
+  margin-top: var(--spacing-2);
+
+  li {
+    margin-bottom: var(--spacing-half);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color .4s ease-in-out;
+  }
+
+  a:hover {
+    color: var(--color-melon);
   }
 }

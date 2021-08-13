@@ -19,24 +19,6 @@
     <script async defer data-website-id="ba310c36-9271-4c03-9241-3b79e7eecdf8" src="https://umami.shinlog.me/umami.js"></script>
   </head>
   <body>
-    <aside>
-      <h1 class="site-title">
-        <a href="/">{{ meta.title }}</a>
-        <a class="edit-icon" href="https://ghost.patoken.org/ghost/">{{ 'assets/edit.svg' | svg | safe }}</a>
-      </h1>
-      <nav>
-        <ul>
-          {% for author in authors %}
-            <li>
-              <a href="/{{ author.slug }}/" class="button {% if author.slug | isActive(page.url) %}active{% endif %}">{{ author.name }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
-    </aside>
-
-    <main>
-      {{ content | safe }}
-    </main>
+    {{ content | safe }}
   </body>
 </html>

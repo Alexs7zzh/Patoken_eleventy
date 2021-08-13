@@ -9,9 +9,33 @@ eleventyComputed:
   title: "{{ author.name }}"
 ---
 {% from "article.njk" import article %}
-
 {% set posts = author.slug | getPostsByAuthor(allPosts) %}
 
-{% for post in posts %}
-  {{ article(post) }}
-{% endfor %}
+<aside>
+  <h1 class="site-title">
+    <a href="/">{{ meta.title }}</a>
+    <a class="edit-icon" href="https://ghost.patoken.org/ghost/">{{ 'assets/edit.svg' | svg | safe }}</a>
+  </h1>
+  <nav>
+    <ul class="author-list">
+      {% for author in authors %}
+        <li>
+          <a href="/{{ author.slug }}/" class="button {% if author.slug | isActive(page.url) %}active{% endif %}">{{ author.name }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <ul class="post-list">
+      {% for post in posts %}
+        <li>
+          <a href="#{{ post.slug }}">{{ post.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  {% for post in posts %}
+    {{ article(post) }}
+  {% endfor %}
+</main>
