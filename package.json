@@ -10,7 +10,7 @@
     "brenchmark": "DEBUG=Eleventy:Benchmark* ELEVENTY_ENV=true npx @11ty/eleventy"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0-canary.41",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@tryghost/content-api": "^1.5.12",
     "async-mutex": "^0.3.1",
