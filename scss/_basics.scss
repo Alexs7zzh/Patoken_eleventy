@@ -68,4 +68,9 @@ p + p {
 .button {
   border-radius: 0.4em;
   padding: .4em .6em;
+  user-select: none;
+}
+
+a {
+  color: var(--color-text);
 }

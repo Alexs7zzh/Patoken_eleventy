@@ -1,0 +1,12 @@
+<ul class="author-list">
+  {% for author in authors %}
+    <li>
+      <a href="/{{ author.slug }}/" class="button {% if author.slug | isActive(page.url) %}active{% endif %}">{{ author.name }}</a>
+    </li>
+  {% endfor %}
+  {% for tag in tags %}
+    <li>
+      <a href="/{{ tag.slug }}/" class="button {% if tag.slug | isActive(page.url) %}active{% endif %}">{{ tag.name }}</a>
+    </li>
+  {% endfor %}
+</ul>

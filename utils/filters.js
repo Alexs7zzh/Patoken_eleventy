@@ -10,9 +10,20 @@ module.exports = config => {
 
   config.addFilter('getPostsByAuthor', (author, posts) => {
     posts = posts.filter(i => {
+      if (i.primary_tag.name !== 'dream') return false
       let flag = false
       for(let j of i.authors)
         if (j.slug === author) flag = true
+      return flag
+    })
+    return posts
+  })
+
+  config.addFilter('getPostsByTag', (tag, posts) => {
+    posts = posts.filter(i => {
+      let flag = false
+      for(let j of i.tags)
+        if (j.slug === tag) flag = true
       return flag
     })
     return posts

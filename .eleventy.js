@@ -11,7 +11,7 @@ module.exports = config => {
 
   config.setDataDeepMerge(true)
   config.setTemplateFormats('njk')
-
+  config.addPassthroughCopy('assets')
   config.setBrowserSyncConfig({
     ui: false,
     ghostMode: false

@@ -12,18 +12,9 @@ eleventyComputed:
 {% set posts = author.slug | getPostsByAuthor(allPosts) %}
 
 <aside>
-  <h1 class="site-title">
-    <a href="/">{{ meta.title }}</a>
-    <a class="edit-icon" href="https://ghost.patoken.org/ghost/">{{ 'assets/edit.svg' | svg | safe }}</a>
-  </h1>
+  {% include "header.njk" %}
   <nav>
-    <ul class="author-list">
-      {% for author in authors %}
-        <li>
-          <a href="/{{ author.slug }}/" class="button {% if author.slug | isActive(page.url) %}active{% endif %}">{{ author.name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+    {% include "taglist.njk" %}
     <ul class="post-list">
       {% for post in posts %}
         <li>

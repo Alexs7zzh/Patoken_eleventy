@@ -23,7 +23,6 @@ aside {
 nav ul {
   padding: 0;
   list-style: none;
-  user-select: none;
 }
 
 .author-list {
@@ -61,6 +60,7 @@ nav ul {
   }
 
   li {
+    user-select: none;
     margin-bottom: var(--spacing-half);
     @media screen and (max-width: 648px) {
       display: inline-block;
