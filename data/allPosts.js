@@ -3,8 +3,8 @@ const { AssetCache } = require('@11ty/eleventy-cache-assets')
 
 /* global process */
 const api = new GhostContentAPI({
-  url: "https://ghost.patoken.org", //process.env.GHOST_URL,
-  key: "231c7110e7708251aab20ff9bf", //process.env.GHOST_API,
+  url: process.env.GHOST_URL,
+  key: process.env.GHOST_API,
   version: 'v3'
 })
 

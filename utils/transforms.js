@@ -12,7 +12,7 @@ module.exports = config => {
         ele.setAttribute('href', href)
       }
 
-      // if (process.env.ELEVENTY_ENV)
+      if (process.env.ELEVENTY_ENV)
         await require('./plugins/picture')(document, {
           sizes: '(max-width: 648px) 100vw, 750px'
         })
