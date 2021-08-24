@@ -30,6 +30,7 @@ nav ul {
   margin-bottom: 0;
 
   li {
+    line-height: 1;
     margin-bottom: var(--spacing);
     @media screen and (max-width: 648px) {
       display: inline-block;
@@ -61,6 +62,7 @@ nav ul {
   }
 
   li {
+    line-height: 1;
     user-select: none;
     margin-bottom: var(--spacing-half);
     @media screen and (max-width: 648px) {
