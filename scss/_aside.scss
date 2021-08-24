@@ -27,12 +27,13 @@ nav ul {
 
 .author-list {
   margin-top: var(--spacing);
+  margin-bottom: 0;
 
   li {
     margin-bottom: var(--spacing);
     @media screen and (max-width: 648px) {
       display: inline-block;
-      margin-bottom: var(--spacing-half);
+      margin-bottom: 1.4em;
       margin-right: var(--spacing-half);
     }
   }
