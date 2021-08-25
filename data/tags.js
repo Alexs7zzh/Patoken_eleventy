@@ -9,12 +9,16 @@ const api = new GhostContentAPI({
 })
 
 const fetchTags = async () => {
-  let asset = new AssetCache('all_tags')
-  if (asset.isCacheValid('1d')) return asset.getCachedValue()
+  let asset = null
+  if (process.env.VERCEL !== '1') {
+    asset = new AssetCache('all_tags')
+    if (asset.isCacheValid('1d')) return asset.getCachedValue() 
+  }
 
   let result = await api.tags.browse()
   result = result.filter(i => i.name !== 'dream')
-  await asset.save(result, 'json')
+  
+  if (process.env.VERCEL !== '1') await asset.save(result, 'json')
 
   return result
 }

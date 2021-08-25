@@ -1,6 +1,6 @@
 const GhostContentAPI = require('@tryghost/content-api')
-const { AssetCache } = require('@11ty/eleventy-cache-assets')
 const { parseHTML } = require('linkedom')
+const { AssetCache } = require('@11ty/eleventy-cache-assets')
 
 /* global process */
 const api = new GhostContentAPI({
@@ -10,9 +10,12 @@ const api = new GhostContentAPI({
 })
 
 const fetchPosts = async () => {
-  let asset = new AssetCache('all_posts')
-  if (asset.isCacheValid('1d')) return asset.getCachedValue()
-
+  let asset = null
+  if (process.env.VERCEL !== '1') {
+    asset = new AssetCache('all_posts')
+    if (asset.isCacheValid('1d')) return asset.getCachedValue()
+  }
+  
   let result = await api.posts.browse({ include: 'tags,authors' })
   for (let i of result) {
     let { document } = parseHTML(i.html)
@@ -24,7 +27,8 @@ const fetchPosts = async () => {
     }
     i.html = document.toString()
   }
-  await asset.save(result, 'json')
+
+  if (process.env.VERCEL !== '1') await asset.save(result, 'json')
 
   return result
 }

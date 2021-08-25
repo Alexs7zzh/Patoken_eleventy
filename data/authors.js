@@ -9,12 +9,16 @@ const api = new GhostContentAPI({
 })
 
 const fetchAuthors = async () => {
-  let asset = new AssetCache('all_authors')
-  if (asset.isCacheValid('1d')) return asset.getCachedValue()
+  let asset = null
+  if (process.env.VERCEL !== '1') {
+    asset = new AssetCache('all_authors')
+    if (asset.isCacheValid('1d')) return asset.getCachedValue()
+  }
 
   let result = await api.authors.browse()
   result = result.slice(0, result.length)
-  await asset.save(result, 'json')
+
+  if (process.env.VERCEL !== '1') await asset.save(result, 'json')
 
   return result
 }
