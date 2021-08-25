@@ -1,10 +1,6 @@
 :root {
-  --font-xxs: 0.23rem;
-  --font-xs: 0.35rem;
   --font-s: 0.75rem;
   --font: 1rem;
-  --font-l: 1.1rem;
-  --font-xl: 1.3rem;
   
   --line-height: 1.7rem;
   
@@ -13,7 +9,6 @@
   --spacing-2: calc(var(--line-height) * 2);
   --spacing-3: calc(var(--line-height) * 3);
   --spacing-4: calc(var(--line-height) * 4);
-  --spacing-6: calc(var(--line-height) * 6);
   
   --color-text: rgb(17, 24, 39);
   --color-melon: #ffa69e;
@@ -22,6 +17,4 @@
   --color-coral: #5e6472;
   
   --font-sans: -apple-system, BlinkMacSystemFont, 'Noto Sans', 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'Osaka', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', 'MS PGothic';
-  
-  --radius: 2.08333% / 4.16671%;
 }
