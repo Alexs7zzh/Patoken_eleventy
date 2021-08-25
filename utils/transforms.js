@@ -26,8 +26,7 @@ module.exports = config => {
           sortAttributes: true,
           html5: true,
           decodeEntities: true,
-          minifyJS: true,
-          minifyURLs: "https://patoken.org"
+          minifyJS: true
         })
       
       return content
