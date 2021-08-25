@@ -23,6 +23,8 @@
         let node = e.target
         while (node.tagName !== 'FIGURE') node = node.parentNode
         const clone = node.cloneNode(true)
+        for (let source of clone.getElementsByTagName('source'))
+          source.setAttribute('sizes', '(max-width: 648px) 100vw, 80vw')
         const imagebox = document.getElementById('imagebox')
         imagebox.appendChild(clone)
         imagebox.classList.add('show')

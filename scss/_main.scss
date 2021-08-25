@@ -11,6 +11,12 @@ h3 {
   margin-bottom: var(--spacing-half);
 }
 
+figcaption {
+  text-align: center;
+  font-size: var(--font-s);
+  color: var(--color-coral);
+}
+
 main {
   ul {
     list-style: none;

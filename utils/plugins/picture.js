@@ -1,7 +1,7 @@
 const Image = require('@11ty/eleventy-img')
 
 const defaultOptions = {
-  widths: [768, 1280, 1600],
+  widths: [768, 1280, 1600, null],
   sizes: '',
   formats: ['webp', 'jpeg'],
   urlPath: '/assets/',
@@ -22,11 +22,14 @@ module.exports = async (document, options) => {
     const stats = await Image(src, options)
     
     i.outerHTML = `
-    <figure><picture>
+    <figure>
+    <picture>
       <source type="image/webp" sizes="${options.sizes}" srcset="${stats.webp.map(p => p.srcset).join(', ')}">
       <source type="image/jpeg" sizes="${options.sizes}" srcset="${stats.jpeg.map(p => p.srcset).join(', ')}">
-      <img src="${src}" height="${img.getAttribute('height')}" width="${img.getAttribute('width')}" alt="${img.getAttribute('alt')}">
-    </picture></figure>`
+      <img src="${stats.jpeg[stats.jpeg.length - 1].url}" height="${img.getAttribute('height')}" width="${img.getAttribute('width')}" alt="${img.getAttribute('alt')}">
+    </picture>
+    <figcaption>画像をクリックすると拡大できる</figcaption>
+    </figure>`
   }
 
 }
