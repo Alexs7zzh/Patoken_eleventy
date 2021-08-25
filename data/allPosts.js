@@ -16,7 +16,7 @@ const fetchPosts = async () => {
     if (asset.isCacheValid('1d')) return asset.getCachedValue()
   }
   
-  let result = await api.posts.browse({ include: 'tags,authors' })
+  let result = await api.posts.browse({ limit: 'all', include: 'tags,authors' })
   for (let i of result) {
     let { document } = parseHTML(i.html)
     for(let node of document.querySelectorAll('h2')) {
