@@ -7,7 +7,7 @@ const addTransforms = require('./utils/transforms')
 module.exports = config => {
   addPlugins(config)
   addFilters(config)
-  if (process.env.ELEVENTY_ENV) addTransforms(config)
+  addTransforms(config)
 
   config.setDataDeepMerge(true)
   config.setTemplateFormats('njk')

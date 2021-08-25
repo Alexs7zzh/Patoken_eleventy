@@ -13,20 +13,21 @@ module.exports = config => {
     }
     return content
   })
-
-  config.addTransform('minifyHtml', (content, outputPath) => {
-    if (outputPath && outputPath.endsWith('.html')) 
-      content = minify(content, {
-        removeAttributeQuotes: true,
-        collapseBooleanAttributes: true,
-        collapseWhitespace: true,
-        removeComments: true,
-        sortClassName: true,
-        sortAttributes: true,
-        html5: true,
-        decodeEntities: true
-      })
-    
-    return content
-  })
+  
+  if (process.env.ELEVENTY_ENV)
+    config.addTransform('minifyHtml', (content, outputPath) => {
+      if (outputPath && outputPath.endsWith('.html')) 
+        content = minify(content, {
+          removeAttributeQuotes: true,
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          removeComments: true,
+          sortClassName: true,
+          sortAttributes: true,
+          html5: true,
+          decodeEntities: true
+        })
+      
+      return content
+    })
 }
