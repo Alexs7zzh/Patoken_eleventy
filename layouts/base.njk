@@ -6,8 +6,8 @@
     {% set currentTitle = (title + " | " + meta.title) if title else meta.title %}
     <title>{{ currentTitle }}</title>
     <meta property="og:title" content="{{ currentTitle }}">
-    <meta property="og:site_name" content="{{ meta.title }}">
-    <meta property="og:url" content="{{ meta.url }}">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ meta.url }}{{ page.url }}">
     <link rel="canonical" href="{{ meta.url }}{{ page.url }}">
     
     <link as="style" href={{ "/style.css" | cssHash }} rel="preload">
