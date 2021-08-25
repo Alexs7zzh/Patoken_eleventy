@@ -6,6 +6,10 @@ article {
   position: relative;
 }
 
+h2 {
+  margin-bottom: var(--spacing-half);
+}
+
 h3 {
   margin-top: var(--spacing);
   margin-bottom: var(--spacing-half);
@@ -15,6 +19,13 @@ figcaption {
   text-align: center;
   font-size: var(--font-s);
   color: var(--color-coral);
+}
+
+blockquote {
+  padding-left: var(--spacing-half);
+  margin-top: var(--spacing-half);
+  margin-bottom: var(--spacing-half);
+  border-left: 1px solid var(--color-melon);
 }
 
 main {
