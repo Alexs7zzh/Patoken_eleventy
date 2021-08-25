@@ -1,5 +1,4 @@
 const { parseHTML } = require('linkedom')
-const minify = require('html-minifier').minify
 
 /* global process */
 module.exports = config => {
@@ -14,7 +13,8 @@ module.exports = config => {
     return content
   })
   
-  if (process.env.ELEVENTY_ENV)
+  if (process.env.ELEVENTY_ENV) {
+    const minify = require('html-minifier').minify
     config.addTransform('minifyHtml', (content, outputPath) => {
       if (outputPath && outputPath.endsWith('.html')) 
         content = minify(content, {
@@ -25,9 +25,12 @@ module.exports = config => {
           sortClassName: true,
           sortAttributes: true,
           html5: true,
-          decodeEntities: true
+          decodeEntities: true,
+          minifyJS: true,
+          minifyURLs: "https://patoken.org"
         })
       
       return content
     })
+  }
 }

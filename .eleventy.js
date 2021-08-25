@@ -1,4 +1,4 @@
-if (!process.env.ELEVENTY_ENV) require('dotenv').config()
+if (process.env.VERCEL !== '1') require('dotenv').config()
 
 const addPlugins = require('./utils/plugins')
 const addFilters = require('./utils/filters')
