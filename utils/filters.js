@@ -8,6 +8,10 @@ module.exports = config => {
     return data.toString('utf8')
   })
 
+  config.addFilter('getName', name => {
+    return name.split(' ')[0]
+  })
+
   config.addFilter('getPostsByAuthor', (author, posts) => {
     posts = posts.filter(i => {
       if (i.primary_tag.name !== 'dream') return false
