@@ -16,7 +16,6 @@ const fetchTags = async () => {
   }
 
   let result = await api.tags.browse()
-  result = result.filter(i => i.name !== 'dream')
   
   if (process.env.VERCEL !== '1') await asset.save(result, 'json')
 
