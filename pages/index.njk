@@ -1,6 +1,10 @@
 ---
 layout: base.njk
-permalink: /
+pagination:
+  data: allPosts
+  size: 5
+  alias: posts
+permalink: "/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 {% from "article.njk" import article %}
 
@@ -12,7 +16,17 @@ permalink: /
 </aside>
 
 <main>
-  {% for post in allPosts %}
+  {% for post in posts %}
     {{ article(post) }}
   {% endfor %}
+
+  <nav id="pagination">
+    <ol>
+    {%- for pageEntry in pagination.pages %}
+      <li>
+        <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="button{% if page.url == pagination.hrefs[ loop.index0 ] %} current{% endif %}">{{ loop.index }}</a>
+      </li>
+    {%- endfor %}
+    </ol>
+  </nav>
 </main>
