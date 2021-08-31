@@ -56,7 +56,9 @@ aside {
   margin-top: var(--spacing-2);
   padding: 0;
   list-style-position: inside;
-  max-width: 220px;
+  @media screen and (min-width: 648px) {
+    max-width: 220px;
+  }
 
   @media screen and (max-width: 648px) {
     margin-top: var(--spacing-half);
