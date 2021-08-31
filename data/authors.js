@@ -16,7 +16,7 @@ const fetchAuthors = async () => {
   }
 
   let result = await api.authors.browse()
-  result = result.slice(0, result.length)
+  result = result.slice(0, result.length).filter(i => i.name !== 'Ghost')
 
   if (process.env.VERCEL !== '1') await asset.save(result, 'json')
 
