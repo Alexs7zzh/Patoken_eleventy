@@ -9,9 +9,9 @@
     "clean": "rm -rf _site && rm -rf .cache"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0-canary.41",
+    "@11ty/eleventy": "^1.0.0-canary.43",
     "@11ty/eleventy-cache-assets": "^2.3.0",
-    "@11ty/eleventy-img": "^1.0.0-beta.0",
+    "@11ty/eleventy-img": "^1.0.0-beta.2",
     "@tryghost/content-api": "^1.5.13",
     "async-mutex": "^0.3.2",
     "autoprefixer": "^10.3.4",
