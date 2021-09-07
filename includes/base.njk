@@ -14,14 +14,15 @@
     <script async defer data-website-id="ba310c36-9271-4c03-9241-3b79e7eecdf8" src="https://umami.shinlog.me/umami.js"></script>
   </head>
   <body>
-    <button id="toggle" aria-label="Dark mode toggle">
+    <a id="toggle" aria-label="Dark mode toggle">
       <div class="sun">
         {{ 'assets/sun.svg' | svg | safe }}
       </div>
       <div class="moon">
         {{ 'assets/moon.svg' | svg | safe }}
       </div>
-    </button>
+    </a>
+    
     {{ content | safe }}
 
     <div id="imagebox"></div>
