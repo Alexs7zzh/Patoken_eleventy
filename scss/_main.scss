@@ -1,5 +1,7 @@
-main {
-  margin-top: var(--spacing);
+@media screen and (max-width: 648px) {
+  main {
+    margin-top: var(--spacing);
+  }
 }
 
 article {

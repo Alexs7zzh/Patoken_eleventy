@@ -1,7 +1,7 @@
-@import 'variables';
-@import 'basics';
-@import 'layout';
+@use 'variables';
+@use 'basics';
+@use 'layout';
 
-@import 'aside';
-@import 'main';
-@import 'imagebox';
+@use 'aside';
+@use 'main';
+@use 'imagebox';
