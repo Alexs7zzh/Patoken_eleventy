@@ -23,6 +23,7 @@
   const mediaQueryMode = window.matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 'light'
   const darkModeAttributeName = 'data-user-color-scheme'
   const darkModeStorageKey = 'user-color-scheme'
+  const metaElement = document.getElementById('theme-color')
 
   const resetRootDarkModeAttributeAndLS = () => {
     rootElement.removeAttribute(darkModeAttributeName)
@@ -32,12 +33,13 @@
   const applyCustomDarkModeSettings = mode => {
     const currentSetting = mode || getLS(darkModeStorageKey)
 
-    if (currentSetting) {
-      if (currentSetting === mediaQueryMode)
-        resetRootDarkModeAttributeAndLS()
-      else
-        rootElement.setAttribute(darkModeAttributeName, currentSetting)
-    } else resetRootDarkModeAttributeAndLS()
+    if (currentSetting && currentSetting !== mediaQueryMode)
+      rootElement.setAttribute(darkModeAttributeName, currentSetting)
+    else {
+      resetRootDarkModeAttributeAndLS()
+      currentSetting = mediaQueryMode
+    }
+    metaElement.setAttribute('content', currentSetting === 'dark' ? '#212020' : '#fafafa')
   }
 
   const toggleCustomDarkMode = () => {
