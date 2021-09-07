@@ -23,7 +23,6 @@
   const mediaQueryMode = window.matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 'light'
   const darkModeAttributeName = 'data-user-color-scheme'
   const darkModeStorageKey = 'user-color-scheme'
-  const metaElement = document.getElementById('theme-color')
 
   const resetRootDarkModeAttributeAndLS = () => {
     rootElement.removeAttribute(darkModeAttributeName)
@@ -39,7 +38,7 @@
       resetRootDarkModeAttributeAndLS()
       currentSetting = mediaQueryMode
     }
-    metaElement.setAttribute('content', currentSetting === 'dark' ? '#212020' : '#fafafa')
+    document.getElementById('theme-color').setAttribute('content', currentSetting === 'dark' ? '#212020' : '#fafafa')
   }
 
   const toggleCustomDarkMode = () => {
@@ -59,8 +58,10 @@
 
   applyCustomDarkModeSettings()
 
-  document.getElementById('toggle').addEventListener('click', () => {
-    applyCustomDarkModeSettings(toggleCustomDarkMode())
-  })
+  window.onload = () => {
+    document.getElementById('toggle').addEventListener('click', () => {
+      applyCustomDarkModeSettings(toggleCustomDarkMode())
+    })
+  }
 
 })();
