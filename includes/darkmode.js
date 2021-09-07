@@ -30,7 +30,7 @@
   }
 
   const applyCustomDarkModeSettings = mode => {
-    const currentSetting = mode || getLS(darkModeStorageKey)
+    let currentSetting = mode || getLS(darkModeStorageKey)
 
     if (currentSetting && currentSetting !== mediaQueryMode)
       rootElement.setAttribute(darkModeAttributeName, currentSetting)
@@ -38,6 +38,7 @@
       resetRootDarkModeAttributeAndLS()
       currentSetting = mediaQueryMode
     }
+    console.log('fired')
     document.getElementById('theme-color').setAttribute('content', currentSetting === 'dark' ? '#212020' : '#fafafa')
   }
 
