@@ -37,10 +37,32 @@
     --color-coral: #{color.scale(#5e6472, $lightness: 70%)};
 
     --color-hr: var(--color-coral);
+
+    scrollbar-color: dark;
+    body::-webkit-scrollbar {
+      background-color: #2e2d2d;
+    }
+
+    body::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 2px #404040;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #6d6c6c;
+      border: 4px solid transparent;
+      border-radius: 12px;
+      background-clip: content-box;
+
+      &:active, &:hover {
+        background-color: #979696;
+      }
+    }
   }
 }
 
 :root[data-user-color-scheme="dark"] {
+  scrollbar-color: dark;
+
   --color-text: #fafafa;
   --color-bg: #212020;
   --color-blue: #{color.scale(#aed9e0, $lightness: -10%, $saturation: -20%)};
@@ -49,4 +71,24 @@
   --color-coral: #{color.scale(#5e6472, $lightness: 70%)};
 
   --color-hr: var(--color-coral);
+
+  scrollbar-color: dark;
+  body::-webkit-scrollbar {
+    background-color: #2e2d2d;
+  }
+
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px #404040;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #6d6c6c;
+    border: 4px solid transparent;
+    border-radius: 12px;
+    background-clip: content-box;
+
+    &:active, &:hover {
+      background-color: #979696;
+    }
+  }
 }
