@@ -34,7 +34,7 @@ blockquote {
   border-left: 1px solid var(--color-melon);
 }
 
-main {
+article {
   ul {
     list-style: none;
     padding: 0;
@@ -83,10 +83,12 @@ article + article {
   li {
     display: inline-block;
     margin-right: 0.6em;
+    margin-top: var(--spacing-half);
   }
 
   a {
-    line-height: 1.2;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
     background-color: var(--color-eggshell);
     text-decoration: none;
   }
