@@ -85,13 +85,12 @@ a {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: calc(var(--spacing) + 0.2em);
+  top: var(--spacing);
   right: var(--spacing-half);
   padding: 0;
 
   @media screen and (min-width: 648px) {
     position: fixed;
-    top: var(--spacing);
     right: var(--spacing);
   }
 }
