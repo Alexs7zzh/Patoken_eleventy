@@ -23,18 +23,21 @@
   const mediaQueryMode = window.matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 'light'
   const darkModeAttributeName = 'data-user-color-scheme'
   const darkModeStorageKey = 'user-color-scheme'
+  const colorSchemeMetaElement = document.getElementById('color-scheme')
 
   const resetRootDarkModeAttributeAndLS = () => {
     rootElement.removeAttribute(darkModeAttributeName)
     removeLS(darkModeStorageKey)
+    colorSchemeMetaElement.setAttribute('content', 'dark light')
   }
 
   const applyCustomDarkModeSettings = mode => {
     let currentSetting = mode || getLS(darkModeStorageKey)
 
-    if (currentSetting && currentSetting !== mediaQueryMode)
+    if (currentSetting && currentSetting !== mediaQueryMode) {
       rootElement.setAttribute(darkModeAttributeName, currentSetting)
-    else {
+      colorSchemeMetaElement.setAttribute('content', currentSetting)
+    } else {
       resetRootDarkModeAttributeAndLS()
       currentSetting = mediaQueryMode
     }
