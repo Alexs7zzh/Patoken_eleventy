@@ -18,4 +18,4 @@
     node.classList.remove('show')
     node.innerHTML = ''
   })
-})();
+})()
