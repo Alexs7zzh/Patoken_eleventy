@@ -78,12 +78,20 @@ article + article {
   ol {
     list-style: none;
     padding: 0;
+    @media screen and (max-width: 648px) {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(1.8em, 1fr));
+      column-gap: 0.6em;
+    }
   }
 
   li {
     display: inline-block;
-    margin-right: 0.6em;
     margin-top: var(--spacing-half);
+    @media screen and (min-width: 648px) {
+      margin-right: var(--spacing-half);
+    }
   }
 
   a {
