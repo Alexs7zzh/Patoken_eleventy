@@ -19,7 +19,7 @@ module.exports = config => {
   
   return {
     dir: {
-      includes: "layouts",
+      includes: "includes",
       data: "data"
     }
   }

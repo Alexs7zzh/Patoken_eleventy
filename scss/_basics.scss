@@ -22,6 +22,7 @@ dd {
 
 html {
   scroll-behavior: smooth;
+  position: relative;
 }
 
 img,
@@ -50,7 +51,9 @@ html {
 
 body {
   color: var(--color-text);
+  background-color: var(--color-bg);
   font-family: var(--font-sans);
+  transition: all .2s ease-out;
 }
 
 ::selection {
@@ -70,8 +73,66 @@ p + p {
   border-radius: 0.4em;
   padding: .4em .6em;
   user-select: none;
+  color: #1c1c1e;
 }
 
 a {
   color: var(--color-text);
+}
+
+#toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: calc(var(--spacing) + 0.2em);
+  right: var(--spacing-half);
+  padding: 0;
+
+  @media screen and (min-width: 648px) {
+    position: fixed;
+    top: var(--spacing);
+    right: var(--spacing);
+  }
+}
+
+.sun {
+  position: absolute;
+  opacity: 0;
+}
+
+.sun, .moon {
+  transition: all .3s ease-out;
+  display: inline-block;
+  svg {
+    fill: var(--color-text);
+    width: 1.6em;
+    height: 1.6em;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-user-color-scheme]) .moon {
+    opacity: 0;
+    transform-origin: center;
+    transform: rotate(120deg);
+  }
+
+  :root:not([data-user-color-scheme]) .sun {
+    opacity: 1;
+    transform-origin: center;
+    transform: translateY(-0.1em) rotate(120deg);
+  }
+}
+
+:root[data-user-color-scheme="dark"] .moon {
+  opacity: 0;
+  transform-origin: center;
+  transform: rotate(120deg);
+}
+
+:root[data-user-color-scheme="dark"] .sun {
+  opacity: 1;
+  transform-origin: center;
+  transform: translateY(-0.1em) rotate(120deg);
 }

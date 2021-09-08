@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% set currentTitle = (title + " | " + meta.title) if title else meta.title %}
+    <title>{{ currentTitle }}</title>
+    <meta property="og:title" content="{{ currentTitle }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ meta.url }}{{ page.url }}">
+    <link rel="canonical" href="{{ meta.url }}{{ page.url }}">
+    <link as="style" href={{ "/style.css" | cssHash }} rel="preload">
+    <link rel="stylesheet" href={{ "/style.css" | cssHash }} type="text/css">
+    <meta name="theme-color" id="theme-color">
+    <script>
+      {% include "darkmode.js" %}
+    </script>
+    <script async defer data-website-id="ba310c36-9271-4c03-9241-3b79e7eecdf8" src="https://umami.shinlog.me/umami.js"></script>
+  </head>
+  <body>
+    <a id="toggle" aria-label="Dark mode toggle">
+      <div class="sun">
+        {{ 'assets/sun.svg' | svg | safe }}
+      </div>
+      <div class="moon">
+        {{ 'assets/moon.svg' | svg | safe }}
+      </div>
+    </a>
+    
+    {{ content | safe }}
+
+    <div id="imagebox"></div>
+    
+    <script>
+      {% include "zoom.js" %}
+    </script>
+  </body>
+</html>
