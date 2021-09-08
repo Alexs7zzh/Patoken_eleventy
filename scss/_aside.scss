@@ -3,7 +3,7 @@ aside {
     position: fixed;
   }
   @media screen and (max-width: 648px) {
-    border-bottom: 1px solid rgb(255, 193, 193);
+    border-bottom: 1px solid var(--color-hr);
   }
 }
 

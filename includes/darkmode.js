@@ -38,7 +38,6 @@
       resetRootDarkModeAttributeAndLS()
       currentSetting = mediaQueryMode
     }
-    console.log('fired')
     document.getElementById('theme-color').setAttribute('content', currentSetting === 'dark' ? '#212020' : '#fafafa')
   }
 
