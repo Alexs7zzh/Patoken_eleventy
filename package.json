@@ -9,7 +9,7 @@
     "clean": "rm -rf _site && rm -rf .cache"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0-canary.43",
+    "@11ty/eleventy": "^1.0.0-canary.44",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-img": "^1.0.0-beta.2",
     "@tryghost/content-api": "^1.5.13",
@@ -21,7 +21,7 @@
     "linkedom": "^0.11.2",
     "md5": "^2.3.0",
     "postcss": "^8.3.6",
-    "sass": "^1.39.0"
+    "sass": "^1.39.2"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
