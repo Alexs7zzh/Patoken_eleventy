@@ -74,6 +74,7 @@ p + p {
   padding: .4em .6em;
   user-select: none;
   color: #1c1c1e;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -89,6 +90,7 @@ a {
   right: var(--spacing-half);
   padding: 0;
   font-size: 1em;
+  -webkit-tap-highlight-color: transparent;
 
   @media screen and (min-width: 648px) {
     position: fixed;
@@ -102,7 +104,7 @@ a {
 }
 
 .sun, .moon {
-  transition: all .3s ease-out;
+  transition: all .3s cubic-bezier(.3, .7, .4, 1);
   display: inline-block;
   svg {
     fill: var(--color-text);

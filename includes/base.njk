@@ -18,12 +18,12 @@
   </head>
   <body>
     <button id="toggle" aria-label="Dark mode toggle">
-      <div class="sun">
+      <span class="sun">
         {{ 'assets/sun.svg' | svg | safe }}
-      </div>
-      <div class="moon">
+      </span>
+      <span class="moon">
         {{ 'assets/moon.svg' | svg | safe }}
-      </div>
+      </span>
     </button>
     
     {{ content | safe }}
