@@ -1,4 +1,4 @@
-(() => {
+(function() {
   const headings = [...document.querySelectorAll('article div.info')]
   let current = null
 

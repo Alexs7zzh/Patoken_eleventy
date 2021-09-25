@@ -1,4 +1,4 @@
-(() => {
+(function() {
   const setLS = (k, v) => {
     try {
       localStorage.setItem(k, v)

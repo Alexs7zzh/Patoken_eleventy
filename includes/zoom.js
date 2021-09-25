@@ -1,4 +1,4 @@
-(() => {
+(function() {
   const zoom = e => {
     let node = e.target
     while (node.tagName !== 'FIGURE') node = node.parentNode
@@ -9,13 +9,16 @@
     imagebox.appendChild(clone)
     imagebox.classList.add('show')
   }
+
   const images = document.getElementsByTagName('figure')
   for (const img of images)
     img.addEventListener('click', zoom)
+
   document.getElementById('imagebox').addEventListener('click', e => {
     let node = e.target
     while (node.id !== 'imagebox') node = node.parentNode
     node.classList.remove('show')
     node.innerHTML = ''
   })
+
 })()
