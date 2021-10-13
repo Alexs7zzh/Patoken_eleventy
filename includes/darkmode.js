@@ -2,13 +2,17 @@
   const setLS = (k, v) => {
     try {
       localStorage.setItem(k, v)
-    } catch (e) {}
+    } catch (e) {
+      // empty
+    }
   }
 
   const removeLS = k => {
     try {
       localStorage.removeItem(k)
-    } catch (e) {}
+    } catch (e) {
+      // empty
+    }
   }
 
   const getLS = k => {
