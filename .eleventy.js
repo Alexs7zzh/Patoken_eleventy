@@ -9,7 +9,6 @@ module.exports = config => {
   addFilters(config)
   addTransforms(config)
 
-  config.setDataDeepMerge(true)
   config.setTemplateFormats('njk')
   config.addPassthroughCopy('assets')
   config.setBrowserSyncConfig({
