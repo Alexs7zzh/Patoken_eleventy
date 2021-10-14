@@ -21,7 +21,7 @@
     "linkedom": "^0.12.1",
     "md5": "^2.3.0",
     "postcss": "^8.3.9",
-    "sass": "^1.42.1"
+    "sass": "^1.43.2"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
