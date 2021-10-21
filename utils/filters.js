@@ -1,4 +1,5 @@
 const fs = require('fs')
+const { DateTime } = require('luxon')
 
 module.exports = config => {
   config.addFilter('isActive', (slug, url) => url.includes(slug))
@@ -22,13 +23,18 @@ module.exports = config => {
     return posts
   })
 
-  config.addFilter('getPostsByTag', (tag, posts) => {
-    posts = posts.filter(i => {
-      let flag = false
-      for(let j of i.tags)
-        if (j.slug === tag) flag = true
-      return flag
+  config.addFilter('sortByYear', posts => {
+    let yearSet = new Set()
+    posts.forEach(item => {
+      yearSet.add(DateTime.fromISO(item.published_at).year)
     })
-    return posts
+    return [...yearSet]
+      .sort((a, b) => b - a)
+      .map(year => [
+        year,
+        posts
+          .filter(item => DateTime.fromISO(item.published_at).year == year)
+          .sort((a, b) => b.created_at - a.created_at)
+      ])
   })
 }

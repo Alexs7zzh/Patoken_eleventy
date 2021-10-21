@@ -18,6 +18,10 @@ const fetchPosts = async () => {
   
   let result = await api.posts.browse({ limit: 'all', include: 'tags,authors' })
   for (let i of result) {
+    // TODO title reformat
+    let match = i.title.match(/\d{4}\/(\d{1,2}\/\d{1,2})/)
+    if (match) i.title = match[1]
+      
     let { document } = parseHTML(i.html)
     for(let node of document.querySelectorAll('h2')) {
       const content = node.textContent
