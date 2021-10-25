@@ -18,7 +18,7 @@
     "csso": "^4.2.0",
     "fast-glob": "^3.2.7",
     "html-minifier": "^4.0.0",
-    "linkedom": "^0.12.1",
+    "linkedom": "^0.13.0",
     "luxon": "^2.0.2",
     "md5": "^2.3.0",
     "postcss": "^8.3.10",
