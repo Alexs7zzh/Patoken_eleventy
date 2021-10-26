@@ -26,14 +26,14 @@ module.exports = async (req, res) => {
       user: i.user,
       target: i.target[0].selector,
       user_info: i.user_info.display_name,
-      references: i.references
+      references: i.references[0]
     })) // user, tags
 
   json
     .filter(i => i.references !== undefined)
     .slice().reverse()
     .forEach(i => {
-      const index = json.map(j => j.id).indexOf(i.references[0])
+      const index = json.map(j => j.id).indexOf(i.references)
       if (index >= 0) {
         if (json[index].comment === undefined) json[index].comment = []
         json[index].comment.push(i)
