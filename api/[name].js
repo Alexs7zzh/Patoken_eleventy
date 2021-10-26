@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
       user: i.user,
       target: i.target[0].selector,
       user_info: i.user_info.display_name,
-      references: i.references[0]
+      references: i.references && i.references[0]
     })) // user, tags
 
   json
