@@ -16,7 +16,7 @@ const fetchPosts = async () => {
     if (asset.isCacheValid('1d')) return asset.getCachedValue()
   }
   
-  let result = await api.posts.browse({ limit: 'all', include: 'tags,authors' })
+  let result = await api.posts.browse({ limit: 'all', include: 'authors' })
   for (let i of result) {
     // TODO title reformat
     let match = i.title.match(/\d{4}\/(\d{1,2}\/\d{1,2})/)

@@ -15,7 +15,7 @@ eleventyComputed:
   <div>
     {% include "header.njk" %}
     <nav>
-      {% include "taglist.njk" %}
+      {% include "authorlist.njk" %}
 
       {% for year, items in (posts | sortByYear) %}
       <h2>{{ year }}</h2>

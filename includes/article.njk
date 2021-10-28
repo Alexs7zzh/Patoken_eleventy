@@ -1,12 +1,8 @@
 {% macro article(post) %}
 <article id="{{ post.slug }}">
-  {% if post.primary_tag.name == null %}
   <div class="info">
     <p class="button">{{ post.authors[0].name | getName }}{% if post.title != '(Untitled)' %}・{{ post.title }}{% endif %}</p>
   </div>
-  {% else %}
-  <h2>{{ post.title }}</h2>
-  {% endif %}
   {{ post.html | safe }}
 </article>
 {% endmacro %}
