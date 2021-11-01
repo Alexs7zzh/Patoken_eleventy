@@ -5,7 +5,7 @@ module.exports = config => {
   config.addFilter('isActive', (slug, url) => url.includes(slug))
 
   config.addFilter('svg', path => {
-    const data = fs.readFileSync(path)
+    const data = fs.readFileSync('client/assets/' + path)
     return data.toString('utf8')
   })
 

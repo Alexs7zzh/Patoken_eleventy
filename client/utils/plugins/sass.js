@@ -9,7 +9,7 @@ const autoprefixer = require('autoprefixer')
 const postcss = require('postcss')
 
 const compile = async () => {
-  const files = await fg('scss/[!_]*.{scss,sass}')
+  const files = await fg('client/scss/[!_]*.{scss,sass}')
   
   for (const entry of files) {
     const ext = extname(entry)
@@ -41,7 +41,7 @@ const compileWatch = changed => {
 }
 
 const build = async () => {
-  const files = await fg('scss/[!_]*.{scss,sass}')
+  const files = await fg('client/scss/[!_]*.{scss,sass}')
   let result = {}
   
   for (const entry of files) {
@@ -82,7 +82,7 @@ module.exports = config => {
   let cssHash = {}
   /* global process */
   if (!process.env.ELEVENTY_ENV) {
-    config.addWatchTarget('./scss/')
+    config.addWatchTarget('./client/scss/')
     config.on('beforeBuild', compile)
     config.on('beforeWatch', compileWatch)
     config.addFilter('cssHash', url => url)

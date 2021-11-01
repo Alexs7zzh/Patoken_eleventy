@@ -9,10 +9,12 @@ permalink: "/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{
 {% from "article.njk" import article %}
 
 <aside>
-  {% include "header.njk" %}
-  <nav>
-    {% include "authorlist.njk" %}
-  </nav>
+  <div>
+    {% include "header.njk" %}
+    <nav>
+      {% include "authorlist.njk" %}
+    </nav>
+  </div>
 </aside>
 
 <main>

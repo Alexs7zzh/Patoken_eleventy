@@ -17,17 +17,6 @@
     <script async defer data-website-id="ba310c36-9271-4c03-9241-3b79e7eecdf8" src="https://umami.shinlog.me/umami.js"></script>
   </head>
   <body>
-    <button id="toggle" aria-label="Dark mode toggle">
-      <span class="sun">
-        {{ 'assets/sun.svg' | svg | safe }}
-      </span>
-      <span class="moon">
-        {{ 'assets/moon.svg' | svg | safe }}
-      </span>
-    </button>
-    
     {{ content | safe }}
-
-    <script async src="https://cdn.hypothes.is/hypothesis"></script>
   </body>
 </html>

@@ -1,6 +1,13 @@
-@media screen and (max-width: 648px) {
-  main {
-    margin-top: var(--spacing);
+main {
+  // border-right: 1px solid white;
+  padding: 0 var(--spacing-half);
+  margin-top: var(--spacing);
+  @media screen and (min-width: 648px) {
+    margin-top: 0;
+    padding: var(--spacing-3) var(--spacing);
+  }
+  @media screen and (min-width: 1260px) {
+    padding: var(--spacing-3) var(--spacing-2);
   }
 }
 

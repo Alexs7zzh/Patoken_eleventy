@@ -1,8 +1,8 @@
 if (process.env.VERCEL !== '1') require('dotenv').config()
 
-const addPlugins = require('./utils/plugins')
-const addFilters = require('./utils/filters')
-const addTransforms = require('./utils/transforms')
+const addPlugins = require('./client/utils/plugins')
+const addFilters = require('./client/utils/filters')
+const addTransforms = require('./client/utils/transforms')
 
 module.exports = config => {
   addPlugins(config)
@@ -10,7 +10,6 @@ module.exports = config => {
   addTransforms(config)
 
   config.setTemplateFormats('njk')
-  config.addPassthroughCopy('assets')
   config.setBrowserSyncConfig({
     ui: false,
     ghostMode: false
@@ -18,8 +17,8 @@ module.exports = config => {
   
   return {
     dir: {
-      includes: "includes",
-      data: "data"
+      includes: "client/includes",
+      data: "client/data"
     }
   }
 }
