@@ -1,8 +1,8 @@
 if (process.env.VERCEL !== '1') require('dotenv').config()
 
-const addPlugins = require('./client/utils/plugins')
-const addFilters = require('./client/utils/filters')
-const addTransforms = require('./client/utils/transforms')
+const addPlugins = require('./utils/plugins')
+const addFilters = require('./utils/filters')
+const addTransforms = require('./utils/transforms')
 
 module.exports = config => {
   addPlugins(config)
@@ -17,8 +17,8 @@ module.exports = config => {
   
   return {
     dir: {
-      includes: "client/includes",
-      data: "client/data"
+      includes: "includes",
+      data: "data"
     }
   }
 }
