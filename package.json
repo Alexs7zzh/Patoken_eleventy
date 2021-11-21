@@ -9,24 +9,24 @@
     "clean": "rm -rf _site && rm -rf .cache"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.0-beta.3",
+    "@11ty/eleventy": "^1.0.0-beta.8",
     "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-img": "^1.0.0",
-    "@tryghost/content-api": "^1.5.13",
+    "@tryghost/content-api": "^1.5.16",
     "async-mutex": "^0.3.2",
     "autoprefixer": "^10.4.0",
     "csso": "^4.2.0",
     "fast-glob": "^3.2.7",
     "html-minifier": "^4.0.0",
     "linkedom": "^0.13.0",
-    "luxon": "^2.0.2",
+    "luxon": "^2.1.1",
     "md5": "^2.3.0",
     "postcss": "^8.3.11",
     "sass": "^1.43.4"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
-    "eslint": "^8.1.0"
+    "eslint": "^8.3.0"
   },
   "eslintConfig": {
     "env": {
