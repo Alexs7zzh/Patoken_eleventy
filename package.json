@@ -21,7 +21,7 @@
     "linkedom": "^0.13.0",
     "luxon": "^2.1.1",
     "md5": "^2.3.0",
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.4",
     "sass": "^1.43.4"
   },
   "devDependencies": {
